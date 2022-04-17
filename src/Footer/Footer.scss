@@ -1,0 +1,143 @@
+footer {
+  width: 100%;
+  color: white;
+  background: #000000;
+  padding: 2.75rem 1rem 2.6875rem;
+
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 69.375rem;
+    margin: 0 auto;
+
+    .left-container {
+      img {
+        width: 9rem;
+        height: auto;
+        margin-bottom: 1.5rem;
+      }
+
+      ul {
+        display: flex;
+        list-style: none;
+
+        li {
+          margin-right: 2rem;
+
+          a {
+            font-size: 15px;
+            line-height: 25px;
+            font-weight: 400;
+            color: white;
+            text-decoration: none;
+          }
+        }
+
+        li:hover {
+          margin-bottom: -0.625rem;
+        }
+
+        li:hover::after {
+          content: "";
+          display: block;
+          width: 1.5rem;
+          height: 2px;
+          margin: 0.5rem auto 0;
+          background-color: white;
+          animation: scale 300ms ease;
+        }
+      }
+    }
+
+    .right-container {
+      ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1.5rem);
+        gap: 0 1rem;
+        align-items: center;
+        justify-content: end;
+        margin: 0 0 1.25rem 0;
+        list-style: none;
+
+        li {
+          margin-right: 1rem;
+
+          img:hover {
+            cursor: pointer;
+          }
+        }
+
+        li:hover::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 1.5rem;
+          background-color: white;
+          height: 2px;
+          margin: 0.5rem auto 0;
+          animation: scale 300ms ease;
+        }
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: 400;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 48rem) {
+  footer {
+    .content-container {
+      flex-direction: column;
+
+      .left-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        ul {
+          .link4 {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .right-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        ul {
+          .icon3 {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 25rem) {
+  footer {
+    .content-container {
+      .left-container {
+        margin-bottom: 2rem;
+        ul {
+          flex-direction: column;
+          text-align: center;
+
+          li {
+            margin-right: 0;
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

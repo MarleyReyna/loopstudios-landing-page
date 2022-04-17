@@ -1,0 +1,258 @@
+$background: (
+  creation0: url("./desktop-assets/image-deep-earth.jpg"),
+  creation1: url("./desktop-assets/image-night-arcade.jpg"),
+  creation2: url("./desktop-assets/image-soccer-team.jpg"),
+  creation3: url("./desktop-assets/image-grid.jpg"),
+  creation4: url("./desktop-assets/image-from-above.jpg"),
+  creation5: url("./desktop-assets/image-pocket-borealis.jpg"),
+  creation6: url("./desktop-assets/image-curiosity.jpg"),
+  creation7: url("./desktop-assets/image-fisheye.jpg"),
+);
+
+$mobileBackground: (
+  creation0: url("./mobile-assets/image-deep-earth.jpg"),
+  creation1: url("./mobile-assets/image-night-arcade.jpg"),
+  creation2: url("./mobile-assets/image-soccer-team.jpg"),
+  creation3: url("./mobile-assets/image-grid.jpg"),
+  creation4: url("./mobile-assets/image-from-above.jpg"),
+  creation5: url("./mobile-assets/image-pocket-borealis.jpg"),
+  creation6: url("./mobile-assets/image-curiosity.jpg"),
+  creation7: url("./mobile-assets/image-fisheye.jpg"),
+);
+
+main {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 10rem auto 11.5rem;
+
+  .interactive {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 auto 11.5rem;
+    background-image: url("./desktop-assets/image-interactive.jpg");
+    background-repeat: no-repeat;
+    min-height: 31.25rem;
+    max-width: 69.4375rem;
+
+    .interactive-img {
+      display: none;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 0 auto;
+      padding: 6rem 0 0 6rem;
+      background: white;
+      max-width: 33.8125rem;
+
+      h2 {
+        font-size: 48px;
+        line-height: 48px;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 1.5625rem;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  .creations {
+    max-width: 69.4375rem;
+    margin: 0 auto;
+
+    button {
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #000000;
+      padding: 0.8125rem 2.375rem;
+      background: white;
+      border: 1px solid #000000;
+      transition: all 300ms ease;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background: #000000;
+      color: white;
+    }
+
+    .creation-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5rem;
+
+      h3 {
+        font-size: 48px;
+        line-height: 48px;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #000000;
+      }
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.875rem;
+      list-style: none;
+
+      li {
+        min-height: 28.125rem;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .filter {
+          display: flex;
+          align-items: flex-end;
+          width: 100%;
+          height: 100%;
+          padding: 0 0.5rem 2rem 2.5rem;
+          transition: all 300ms ease;
+
+          h4 {
+            font-size: 32px;
+            line-height: 32px;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: #ffffff;
+          }
+        }
+      }
+
+      li:hover {
+        cursor: pointer;
+
+        .filter {
+          background: rgba(255, 255, 255, 0.75071);
+
+          h4 {
+            color: #000000;
+          }
+        }
+      }
+
+      @each $key, $val in $background {
+        .#{$key} {
+          background-image: $val;
+        }
+      }
+    }
+
+    .bottom-button {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 48rem) {
+  main {
+    padding: 0 1.5rem;
+    margin: 6rem 0;
+
+    .interactive {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: initial;
+      background-image: initial;
+      margin-bottom: 6rem;
+
+      .interactive-img {
+        display: initial;
+        width: 100%;
+        height: auto;
+        max-width: 28.125rem;
+        margin-bottom: 3rem;
+      }
+
+      div {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+
+        h2 {
+          font-size: 2rem;
+          line-height: 2rem;
+        }
+
+        p {
+          padding: 0 1.5rem;
+        }
+      }
+    }
+
+    .creations {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .creation-header {
+        justify-content: center;
+
+        h3 {
+          font-size: 2rem;
+          line-height: 2rem;
+        }
+
+        button {
+          display: none;
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+
+        li {
+          width: 100%;
+          display: flex;
+          align-items: flex-end;
+          background-size: cover;
+          min-height: 7.5rem;
+
+          .filter {
+            min-height: 7.5rem;
+            padding: 0 0 1.25rem 1.25rem;
+
+            h4 {
+              font-size: 24px;
+              line-height: 24px;
+              font-weight: 300;
+              max-width: 9ch;
+            }
+          }
+        }
+
+        .creation3 {
+          .filter {
+            h4 {
+              max-width: 3ch;
+            }
+          }
+        }
+
+        @each $key, $val in $mobileBackground {
+          .#{$key} {
+            background-image: $val;
+          }
+        }
+      }
+
+      .bottom-button {
+        display: initial;
+        margin: 2.125rem auto 0;
+      }
+    }
+  }
+}
